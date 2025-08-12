@@ -1,0 +1,363 @@
+.attendance-container-unique {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* Top Bar */
+.attendance-top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.attendance-back-btn {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+ width: 150px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.attendance-back-btn:hover {
+  transform: scale(1.05);
+}
+
+.attendance-month-picker {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+
+/* Cards Grid */
+.attendance-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.attendance-card-unique {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.table-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll-container table {
+  min-width: 300px; /* force table width so scroll triggers */
+}
+
+
+.attendance-card-unique h4 {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.attendance-table-mini {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.attendance-table-mini th, .attendance-table-mini td {
+  border: 1px solid #ddd;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.status-present {
+  color: green;
+  font-weight: bold;
+}
+.status-absent {
+  color: red;
+  font-weight: bold;
+}
+.status-leave {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Pagination */
+.attendance-pagination {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+   width: 150px;
+}
+
+.attendance-page-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+ 
+}
+.attendance-page-btn:hover {
+  background: #0056b3;
+}
+
+/* Total Table */
+.attendance-total-section {
+  margin-top: 30px;
+}
+
+.attendance-total-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attendance-total-table th, .attendance-total-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.attendance-total-table th {
+  background: #007bff;
+  color: white;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Status colors inside mini tables */
+.status-present {
+  color: green;
+  font-weight: bold;
+}
+.status-absent {
+  color: red;
+  font-weight: bold;
+}
+.status-leave {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Color coding for totals table */
+.present-cell {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: bold;
+}
+.absent-cell {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+}
+.leave-cell {
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+}
+
+/* Pagination styles */
+.attendance-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+.attendance-pagination button {
+  padding: 6px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.attendance-pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.attendance-page-header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.attendance-page-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Responsive styles for ViewAttendancePage */
+@media (max-width: 768px) {
+  .attendance-container-unique {
+    padding: 10px;
+  }
+
+  /* Page Header */
+  .attendance-page-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* Top Controls */
+  .attendance-top-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 20px;
+  }
+
+  .attendance-back-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(41, 128, 185, 0.6);
+    transition: background-color 0.3s ease;
+  }
+  .attendance-back-btn:hover {
+    background-color: #1f6391;
+  }
+
+  .attendance-month-picker {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1.8px solid #bdc3c7;
+  }
+
+  /* Cards grid */
+  .attendance-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .attendance-card-unique {
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 15px;
+    background: #fff;
+  }
+
+  .attendance-card-unique h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Table scroll container for horizontal scroll */
+  .table-scroll-container {
+    overflow-x: auto;
+  }
+
+  /* Tables inside cards */
+  .attendance-table-mini {
+    width: 100%;
+    min-width: 450px; /* allow scroll horizontally */
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .attendance-table-mini th,
+  .attendance-table-mini td {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+  }
+
+  /* Pagination */
+  .attendance-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .attendance-pagination button {
+    padding: 8px 14px;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(41, 128, 185, 0.6);
+    transition: background-color 0.3s ease;
+    min-width: 80px;
+  }
+  .attendance-pagination button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .attendance-pagination button:hover:not(:disabled) {
+    background-color: #1f6391;
+  }
+
+  /* Total attendance section */
+  .attendance-total-section {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+
+  .attendance-total-table {
+    width: 100%;
+    min-width: 350px; /* horizontal scroll for small screens */
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .attendance-total-table th,
+  .attendance-total-table td {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Status cell colors - keep these if you want consistent styling */
+  .status-present {
+    color: #155724;
+    background-color: #d4edda;
+    font-weight: 600;
+  }
+  .status-absent {
+    color: #721c24;
+    background-color: #f8d7da;
+    font-weight: 600;
+  }
+  .status-leave {
+    color: #856404;
+    background-color: #fff3cd;
+    font-weight: 600;
+  }
+}
