@@ -3,7 +3,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api", // Or hardcoded fallback
-  withCredentials: true, // Important for cookie-based auth
+  // withCredentials: true, // Important for cookie-based auth
   headers: {
     "Content-Type": "application/json",
   },

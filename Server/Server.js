@@ -29,7 +29,7 @@ const getLeavesRoutes = require("./routes/getLeavesRoutes");
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://your-frontend-url.com"],
+  origin: ["http://localhost:5173", "https://your-frontend-url.com","https://docs.google.com/"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true,
 }));

@@ -30,7 +30,7 @@
 
     const fetchSavedSheet = async () => {
       try {
-        const res1 = await axios.get("/api/google-sheet");
+        const res1 = await axios.get("http://localhost:5000/api/google-sheet");
         if (res1.data?.sheetUrl) {
           setSheetUrl(res1.data.sheetUrl);
           setSheetData(res1.data.data || []);
